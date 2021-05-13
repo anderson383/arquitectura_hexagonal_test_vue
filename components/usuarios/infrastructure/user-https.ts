@@ -2,29 +2,30 @@ import {UserRepository} from "~/components/usuarios/domain/user/user-repository"
 import {injectable} from "inversify-props";
 import {ID} from "~/core/domain/uuid";
 import {User} from "~/components/usuarios/domain/user/user-model";
+import {$axios} from "~/utils/api";
 
 @injectable()
-export class UserHttps implements UserRepository {
+export class UserHttps implements UserRepository  {
 
-  list(): User[] {
-    console.log('list :v')
-    return [];
+  endpoint = '/user'
+
+  async list(): Promise<User[]> {
+    return $axios.$get(this.endpoint)
   }
 
-  create(user: User): void {
-    console.log('create')
+  async create(user: User): Promise<void> {
+    await $axios.post(this.endpoint, user)
   }
 
-  retrieve(id: ID): User {
-    console.log('retrieve')
-    return {} as User;
+  async retrieve(id: ID): Promise<User> {
+    return $axios.$get(this.endpoint + '/' + id)
   }
 
-  update(id: ID, user: User): void {
-      console.log('update')
+  async update(id: ID, user: User): Promise<void> {
+    await $axios.put(this.endpoint + '/' + id, user)
   }
 
-  delete(id: ID): void {
+  async delete(id: ID): Promise<void> {
     console.log('delete')
   }
 

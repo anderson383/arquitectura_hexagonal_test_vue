@@ -25,9 +25,15 @@ export default {
   css: [
   ],
 
+  axios: {
+    baseURL: 'http://localhost:3004', // Used as fallback if no runtime config is provided
+  },
+
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    'core/domain/container.ts'
+    'core/domain/container.ts',
+    'plugins/axios.ts'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,8 +48,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: ['@nuxtjs/axios'],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

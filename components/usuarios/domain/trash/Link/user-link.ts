@@ -1,4 +1,4 @@
-import {UserContext} from "~/components/usuarios/domain/Context/user-context";
+import {UserContext} from "~/components/usuarios/domain/trash/Context/user-context";
 import {injectable} from "inversify-props";
 
 

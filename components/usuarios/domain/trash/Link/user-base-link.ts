@@ -1,5 +1,5 @@
-import {EmptyUserLink, UserLink} from "~/components/usuarios/domain/Link/user-link";
-import {UserContext} from "~/components/usuarios/domain/Context/user-context";
+import {EmptyUserLink, UserLink} from "~/components/usuarios/domain/trash/Link/user-link";
+import {UserContext} from "~/components/usuarios/domain/trash/Context/user-context";
 
 
 

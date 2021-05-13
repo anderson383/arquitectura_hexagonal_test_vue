@@ -1,6 +1,6 @@
 import {container} from "inversify-props";
 import {TYPES} from "~/core/domain/types";
-import {RunnerUser} from "~/components/usuarios/domain/Runner/runner";
+import {RunnerUser} from "~/components/usuarios/domain/trash/Runner/runner";
 
 
 export abstract class UseCase<Result = void, Param = void> {
