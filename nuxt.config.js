@@ -29,11 +29,19 @@ export default {
     baseURL: 'http://localhost:3004', // Used as fallback if no runtime config is provided
   },
 
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:3005',
+      }
+    }
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     'core/domain/container.ts',
-    'plugins/axios.ts'
+    'plugins/axios.ts',
+    'plugins/apollo.ts'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,7 +56,10 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/apollo',
+    '@nuxtjs/axios'
+  ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

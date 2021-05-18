@@ -1,10 +1,7 @@
 import {User} from "~/components/usuarios/domain/user/user-model";
 import {ID} from "~/core/domain/uuid";
+import {IRequetsRepository} from "~/core/domain/repositories/requets-repository";
 
-export interface UserRepository {
-  list () : Promise<User[]>
-  retrieve ( id: ID ): Promise<User>
-  create ( user: User ): Promise<void>
-  update (id: ID, user: User): Promise<void>
-  delete (id: ID): Promise<void>
+export interface UserRepository extends IRequetsRepository{
+
 }

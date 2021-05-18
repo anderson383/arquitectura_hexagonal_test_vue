@@ -3,6 +3,7 @@ import {injectable, inject} from "inversify-props";
 import {TYPES} from "~/core/domain/types";
 import {UserCommandCreate} from "~/components/usuarios/application/commands/user-command";
 import {User} from "~/components/usuarios/domain/user/user-model";
+import gql from "graphql-tag";
 
 
 
@@ -30,6 +31,7 @@ export default class UsuariosListConf extends Vue {
 
   async getUsers () {
     this.listUser = await this.userService.list()
+    console.log( await this.userService.list())
   }
 
   openDialog () {
